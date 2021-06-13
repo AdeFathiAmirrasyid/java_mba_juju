@@ -1,0 +1,111 @@
+
+//contoh array 1 dimensi 
+
+int[] numbers = new int[3]; //harus ada panjang-nya
+//otomatis membuat 3 ruang kosong dengan isi nilai default 
+// int => nilai default = 0
+// String=> nilai default = null
+
+0	1	2	-> index
+3	0	0	-> value
+
+//kalau mau isi
+numbers[0] = 3;
+numbers[0] = "data";	X
+numbers[3] = 3; 	X
+
+//kalau mau cetak
+print(numbers[0]); 	=> 3
+print(numbers[1]); 	=> 0
+print(numbers[2]); 	=> 0
+
+//array 2 dimensi
+int[][] cell = new int[x][y];
+	x => baris, y => kolom
+int[][] cell = new int[2][3]; 
+//akan membetuk (2x3) ruang kosong
+
+0.0  0.1  0.2
+ 0    0    5
+1.0  1.1  1.2
+ 0    0    0
+
+//isi data
+cell[0][2] = 5;
+cell[2][1] = 7; X
+
+print(cell[1][1]); => 0
+print(cell[0][2]); => 5
+print(cell[2][2]); => X
+
+0  1  2
+1  2  3
+
+==========================
+numbers = 2,5,3,9,1
+max = 9
+min = 1
+rata = 4
+
+==========================
+public static void main(String[] args) {
+        String[] nama = new String[3];
+        
+        nama[1] = "Ade";
+        System.out.println(nama[0]); // null
+        System.out.println(nama[1]); // Ade
+        System.out.println(nama[2]); // null
+        
+        for(int index=0; index<nama.length; index++){
+            int ruang = index+1;
+            nama[index] = "Ruang ke-" + ruang; //isi data array
+//            System.out.println(nama[index]);
+        }
+        
+        for(int index=0; index<nama.length; index++){
+            System.out.println(nama[index]); // cetak data array
+        }
+        
+        System.out.println("");
+        System.out.println("Array 2 dimensi");
+        int[][] cell = new int[2][3];
+        
+        cell[0][2] = 5;
+        cell[1][1] = 7; //error
+        System.out.println(cell[0][0]);
+        System.out.println(cell[0][2]);
+        
+        //cara cepat 
+        for(int i=0; i<2; i++){ //baris
+            for(int j=0; j<3; j++){ //kolom
+                cell[i][j] = i+j;
+                System.out.print(cell[i][j] + "  ");
+            }
+            System.out.println("");
+        }
+        
+        int[][][] point3d = new int[3][2][4];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 2; j++) {
+                for (int k = 0; k < 4; k++) {
+                    point3d[i][j][k] = i+j+k;
+                    System.out.print(point3d[i][j][k]);
+                }
+                System.out.println("");                
+            }
+            System.out.println("");            
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+

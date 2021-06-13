@@ -1,0 +1,57 @@
+Ujian Alpro1
+
+Buatlah program sederhana dengan ketentuan sebagai berikut :
+1. input = number 1-12
+   output = Nama Bulan Masehi, Jumlah hari
+   misal :
+   input = 12
+   output = Desember - 31 hari
+
+2. input = nilai 0 - 100
+   output = Huruf nilai (E = 0, D = 1-49, C = 50 - 69, B = 70 - 84, A = 85-100)
+   misal :
+   input = 50
+   output = Anda mendapatkan nilai C
+
+3. cetak bilangan dengan formasi deret berikut:
+   output = 1  4  3  8  5  12  7
+
+4. Cetak simbol dengan output sebagai berikut :
+   #######
+   ######
+   #####
+   ####
+   ###
+   ##
+   #
+
+
+Ujian Alpro 2
+Buatlah program sederhana dengan menggunakan FUNGSI, PROCEDURE, DAN PARAMETER.
+
+1. Buatlah Array satu dimensi dengan panjang = 8. isi array tersebut menggunakan for dengan nilai berikut {-3  2  7  12  17  22  27  32}
+
+2. Cari nilai maksimal, minimal, dan rata-rata dari array berikut {2,5,3,7,1,4,6}. 
+   serta urutkan menjadi {7,6,5,4,3,2,1}
+
+3. input Matrix = 
+	    {1,2,3,4,5}
+            {2,4,6,8,0}
+            {3,5,7,9,1}
+            {2,5,8,1,3}
+a. output :
+   3 1 8
+   1 9 7 
+   0 8 6
+   5 4 3    
+
+b. output :
+   4 6 8
+   5 8 1
+
+c. output :
+   2 4 6  8  10
+   4 8 12 16 0
+
+
+

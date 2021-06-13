@@ -1,0 +1,308 @@
+
+
+Database
+ - table
+   - kolom
+
+Database
+ - show databases => menampilkan seluruh database yg ada di mysql
+ - create database KampusDb => membuat database dengan nama KampusDb 
+ - drop database KampusDb => menhapus database KampusDb 
+ - use KampusDb => untuk mengaktifkan database KampusDb 
+
+Table
+ - show tables
+ - create table Mahasiswa (NIM int(4), NamaMahasiswa varchar(50), Alamat varchar(100), Prodi char(2))
+ - drop table Mahasiswa
+ - alter table Mahasiswa => add, modify, change, drop column
+
+cmd
+====================
+Microsoft Windows [Version 10.0.18362.476]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\jjuhaeriyah>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> quit
+Bye
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.4.11-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases
+    ->
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database KampusDb;
+Query OK, 1 row affected (0.015 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| kampusdb           |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database dummydb;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dummydb            |
+| information_schema |
+| kampusdb           |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+7 rows in set (0.001 sec)
+
+MariaDB [(none)]> drop database dummydb;
+Query OK, 0 rows affected (0.002 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| kampusdb           |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> create table Mahasiswa;
+ERROR 1046 (3D000): No database selected
+MariaDB [(none)]> use kampusdb;
+Database changed
+MariaDB [kampusdb]> show tables;
+Empty set (0.001 sec)
+
+MariaDB [kampusdb]> create table Mahasiswa (NIM int(4), NamaMahasiswa varchar(50), Alamat varchar(100), Prodi char(2))
+    -> ;
+Query OK, 0 rows affected (0.040 sec)
+
+MariaDB [kampusdb]> show tables;
++--------------------+
+| Tables_in_kampusdb |
++--------------------+
+| mahasiswa          |
++--------------------+
+1 row in set (0.001 sec)
+
+MariaDB [kampusdb]> desc mahasiswa
+    -> ;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | YES  |     | NULL    |       |
+| NamaMahasiswa | varchar(50)  | YES  |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.024 sec)
+
+MariaDB [kampusdb]> create table Mahasiswa2 (NIM int(4) primary key, NamaMahasiswa varchar(50) not null, Alamat varchar(100), Prodi char(2));
+Query OK, 0 rows affected (0.058 sec)
+
+MariaDB [kampusdb]> desc mahasiswa2;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   | PRI | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.031 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa add constraint contraintPK primary key (NIM);
+Query OK, 0 rows affected, 1 warning (0.101 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   | PRI | NULL    |       |
+| NamaMahasiswa | varchar(50)  | YES  |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.026 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa drop primary key;
+Query OK, 0 rows affected (0.131 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   |     | NULL    |       |
+| NamaMahasiswa | varchar(50)  | YES  |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.022 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa add constraint contraintPK primary key (NamaMahasiswa);
+Query OK, 0 rows affected, 1 warning (0.131 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   |     | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   | PRI | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.028 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa drop primary key;
+Query OK, 0 rows affected (0.126 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   |     | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.021 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa add constraint contraintPK primary key (nim);
+Query OK, 0 rows affected, 1 warning (0.099 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   | PRI | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.021 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa add Keterangan varchar(70);
+Query OK, 0 rows affected (0.018 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   | PRI | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
+| Keterangan    | varchar(70)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+5 rows in set (0.022 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa modify column keterangan varchar(20);
+Query OK, 0 rows affected (0.141 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   | PRI | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
+| keterangan    | varchar(20)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+5 rows in set (0.022 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa change column keterangan ket varchar(50);
+Query OK, 0 rows affected (0.017 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   | PRI | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
+| ket           | varchar(50)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+5 rows in set (0.025 sec)
+
+MariaDB [kampusdb]> alter table mahasiswa drop column ket;
+Query OK, 0 rows affected (0.017 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [kampusdb]> desc mahasiswa;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| NIM           | int(4)       | NO   | PRI | NULL    |       |
+| NamaMahasiswa | varchar(50)  | NO   |     | NULL    |       |
+| Alamat        | varchar(100) | YES  |     | NULL    |       |
+| Prodi         | char(2)      | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+4 rows in set (0.021 sec)
+
+MariaDB [kampusdb]> Ctrl-C -- exit!
+Bye
+
+C:\xampp\mysql\bin>

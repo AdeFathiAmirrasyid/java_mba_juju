@@ -1,0 +1,39 @@
+Matriks
+
+MatriksA =	3  5  7  3
+3x4		2  4  3  2
+		5  2  6  3
+
+transpose => baris <-> kolom
+MatriksAt = 	3  2  5
+4x3		5  4  2
+		7  3  6
+		3  2  3
+
+
+mendapatkan diagonal matriks
+=> syarat matriks diagonal => persegi
+MatriksB = 	2  5  3  4	00 01 02 03
+4x4		3  2  5  1	10 11 12 13
+		3  1  5  2	20 21 22 23
+		7  4  2  6	30 31 32 33
+diagonal => 2,2,5,6 => 00, 11, 22, 33
+sisi miring => cara mendapatkannya ambil data dari matriks yang baris dan kolomnya sama.
+	 => 4,5,1,7
+
+penjumlahan dan pengurangan
+=> syaratnya matriksnya harus mempunyai ordo yg sama
+Matriks1       +	Matriks2	= Matriks3
+3  5  2  4 		2  3  1  1	  5  8  3  5
+2  4  3  1    		2  1  2  1	  4  5  5  2
+2  3  4  1 		1  2  1  2	  3  5  5  3
+
+
+perkalian matriks dengan konstanta
+MatriksX       * 2	= MatriksY
+3  5  2  4 		  6  10  4  8
+2  4  3  1    		  4  8   6  2
+2  3  4  1 		  4  6   8  2
+
+
+perkalian antar matriks

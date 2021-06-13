@@ -1,0 +1,44 @@
+package belajar;
+
+public class NewClass1 {
+
+    public static void main(String[] args) {
+        int array[][] = {
+            {4, 2, 5, 1, 7},
+            {3, 5, 1, 6, 3},
+            {6, 9, 2, 4, 1},
+            {5, 2, 4, 7, 8},
+            {2, 5, 3, 8, 1}
+        };
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        System.out.println(" ");
+
+        System.out.println(" No.4 ");
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if ((i + j) == 4) {
+                    System.out.print(array[i][j] + " ");
+                }
+
+            }
+
+        }
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" No.3 ");
+        for (int i = 3; i >= 1; i--) {
+            for (int j = 1; j <= 3; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+
+    }
+
+}

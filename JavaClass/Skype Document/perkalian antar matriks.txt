@@ -1,0 +1,71 @@
+Penjumlahan Matriks
+
+A + B = C
+A - B = D
+B - A = E
+
+A - B != B - A
+
+MatriksA
+2  4  6  7
+1  2  4  3
+2  3  4  5
+3  2  1  2
+
+diagonal => 2 2 4 2
+	 => 7 4 3 3
+
+2 =>	00
+2	11
+4	22
+2	33
+
+untuk mendapatkan diagonal, cetak yang baris == kolom
+
+
+transpose => salah satu proses matriks, dimana yang sebelumnya baris, dipindahkan menjadi kolom (begitu juga sebaliknya)
+
+MatriksA(5x4)
+2  4  6  7
+1  2  4  3
+2  3  4  5
+3  2  1  2
+1  1  1  1
+
+MatriksAt(4x5) => 
+2 1 2 3
+
+Perkalian antar Matriks
+MatriksA [a][b]
+MatriksB [c][d]
+MatriksC [a][d]
+syarat perkalian b==c, maka akan menghasilkan matriks baru dengan ordo [a][d]
+
+matriksA[2][3] x matriksB[3][2] = matriksC[2][2]
+a  b  c			p  s
+d  e  f		x	q  t
+			r  u
+matriksC(2x2)
+00 =>(00 x 00)+(01 x 10)+(02 x 20)	01 =>(00 x 01)+(01 x 11)+(02 x 21)
+10 =>(10 x 00)+(11 x 10)+(12 x 20)	11 =>(10 x 01)+(11 x 11)+(12 x 21)
+
+//matriksA
+for(int a=0; a<2; a++){
+	for(int b=0; b<3; j++){
+		for(int d=0; d<2; d++){			
+			matriksC[a][d] += (matriksA[a][b] * matriksB[b][d]);
+		}
+
+	}
+}
+
+
+for(int i=0; i<2; i++){
+	for(int j=0; j<2; j++){
+	}
+}
+
+
+
+
+ 

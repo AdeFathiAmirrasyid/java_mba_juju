@@ -1,0 +1,153 @@
+tugas 11
+
+1. matriks penjumlahan
+
+int matrix_a[][] = {
+            {3, 5, 2, 4}, 
+            {2, 4, 3, 1}, 
+            {2, 3, 4, 1}};
+        int matrix_b[][] = {
+            {2, 3, 1, 1}, 
+            {2, 1, 2, 1}, 
+            {1, 2, 1, 2}};
+        int matrix_c[][] = new int[3][4];
+        
+        System.out.println("Matrik A");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix_a[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Matrik B");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix_b[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println("Hasil penjumlahan (Matrks C)");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                //hasil di simpan di matriks baru
+                //ordo yang sama dijumlahkan
+                matrix_c[i][j] = matrix_a[i][j] + matrix_b[i][j];
+                System.out.print(matrix_c[i][j] + " ");            
+            }
+            System.out.println("");
+        }
+
+
+2. pengurangan matriks 
+
+	int matrix_a[][] = {
+            {3, 5, 2, 4}, 
+            {2, 4, 3, 1}, 
+            {2, 3, 4, 1}};
+        int matrix_b[][] = {
+            {2, 3, 1, 1}, 
+            {2, 1, 2, 1}, 
+            {1, 2, 1, 2}};
+        int matrix_c[][] = new int[3][4];
+        
+        System.out.println("Matrik A");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix_a[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Matrik B");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix_b[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        System.out.println("Hasil Pengurangan(Matrks C)");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                //hasil di simpan di matriks baru
+                //ordo yang sama dijumlahkan
+                matrix_c[i][j] = matrix_a[i][j] - matrix_b[i][j];
+                System.out.print(matrix_c[i][j] + " ");            
+            }
+            System.out.println("");
+        }
+
+
+3. Mendapatkan diagonal matriks (sisi miring kanan dan kiri)
+
+int [][] diagonal = {
+            {2 , 5 , 3 , 4},
+            {3 , 2 , 5 , 1},
+            {3 , 1 , 5 , 2},
+            {7 , 4 , 2 , 6}};
+        
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if(i==j){
+                    System.out.print(diagonal[i][j] + " ");
+                }
+            }
+        }
+
+
+4. perkalian matriks
+
+	package belajar;
+
+public class NewClass2 {
+
+    public static void main(String[] args) {
+        int matrix_a[][] = {{3, 5, 2, 4}, {2, 4, 3, 1}, {2, 3, 4, 1}};
+        int matrix_c[][] = new int[3][4];
+
+        System.out.println("Matrik A");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix_a[i][j] + " ");
+            }
+            System.out.println();
+        } 
+        System.out.println(" Hasil Perkalian  x 2");
+         for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 4; j++) { 
+                matrix_c[i][j] = matrix_a[i][j] * 2;
+                System.out.print(matrix_c[i][j] + " ");
+            }
+            System.out.println();
+        } 
+        
+
+    }
+}
+
+
+5. transpose matriks
+
+int[][] matriksA = {
+            {2, 5, 3, 4},
+            {3, 2, 5, 1},
+            {3, 1, 5, 2},
+            {7, 4, 2, 6},
+            {3, 1, 5, 2}
+        };
+
+        System.out.println("Matriks awal");
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matriksA[i][j] + " ");
+            }
+            System.out.println("");
+        }
+
+        System.out.println("hasil transpose");
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(matriksA[j][i] + " ");
+            }
+            System.out.println("");
+        }

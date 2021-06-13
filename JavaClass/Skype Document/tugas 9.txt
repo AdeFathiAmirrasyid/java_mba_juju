@@ -1,0 +1,104 @@
+package latihan1;
+
+import java.util.Scanner;
+
+public class Latihan2 {
+
+    public static void main(String[] args) {
+        Scanner inputUser = new Scanner(System.in);
+        System.out.println("========== Program Rumus Matematika ==========");
+        System.out.println("   1.KUBUS                 2.BALOK           ");
+        System.out.println("   3.LIMAS SEGIEMPAT       4.PRISMA SEGITIGA ");
+        int user;
+        String ulangi;
+        System.out.println("");
+
+        do {
+            System.out.print("Pilih 1 - 4  : ");
+            user = inputUser.nextInt();
+            switch (user) {
+                case 1:
+                    kubus();
+                    break;
+                case 2:
+                    System.out.println(" ===== 2.BALOK ===== ");
+                    System.out.println("Rumus Volume Balok -> V = p x l x t ");
+                    System.out.println(" Rumus Luas Balok -> luasBalok =  (2 x p x l) + (2 x p x t) + (2 x l x t) ");
+                    System.out.print(" Panjang Balok : ");
+                    int panjangBalok = inputUser.nextInt();
+                    System.out.print(" Lebar Balok   : ");
+                    int lebarBalok = inputUser.nextInt();
+                    System.out.print(" Tinggi Balok  : ");
+                    int tinggiBalok = inputUser.nextInt();
+                    int volumeBalok = balok(panjangBalok, lebarBalok, tinggiBalok);
+                    System.out.println("Volume Balok = " + volumeBalok);
+                    break;
+                case 3:
+                    System.out.println(" ===== 3.LIMAS SEGIEMPAT ===== ");
+                    System.out.println(" Rumus Mencari Volume Limas SegiEmpat -> V = 1/3 x p x l x t ");
+                    limasSegiempat(0, 0, 0); // salah
+                    break;
+                case 4:
+                    System.out.println(" ===== 4.PRISMA SEGITIGA ===== ");
+                    System.out.println(" Rumus Mencari Volume prisma SegiTiga -> V = 1/2 x p x l x t ");
+                    double volumePrisma = prismaSegitiga(0, 0, 0); // daripada 0, berarti tidak ada parameter
+                    System.out.println(" Volume Limas " + volumePrisma);
+//break;
+                default:
+                    System.out.println(" Selain itu Tidak Ada ");
+                    //break
+            }
+            System.out.print("Ketik ya Jika Ingin Mengulangi : ");
+            ulangi = inputUser.next();
+        } while (ulangi.toLowerCase().equals("ya"));
+    }
+
+    //contoh non parameter
+    private static void kubus() {
+        Scanner input = new Scanner(System.in);
+        System.out.println(" ===== 1.KUBUS ===== ");
+        System.out.println(" Rumus Volume Kubus -> v = s * s * s ");
+        System.out.println(" Rumus Luas Kubus  ->  L = 6 * s *s ");
+        System.out.print("input sisi = ");
+        int sisi = input.nextInt();
+        int volumeKubus = sisi * sisi * sisi;
+        System.out.println(" Volume Kubus " + volumeKubus);
+        System.out.println("");
+        int p = 6;
+        int luasKubus = p * sisi * sisi;
+        System.out.println(" Luas Kubus " + luasKubus);
+    }
+
+    //contoh parameter
+    private static int balok(int panjangBalok, int lebarBalok, int tinggiBalok) {
+        int volumeBalok = panjangBalok * lebarBalok * tinggiBalok;        
+        int p = 2;
+        int luasBalok = (p * panjangBalok * lebarBalok) + (p * panjangBalok * tinggiBalok) + (p * lebarBalok * tinggiBalok);
+        System.out.println("Luas Balok = " + luasBalok);
+        return volumeBalok;
+    }
+
+    private static void limasSegiempat(double p, int luasAlas, int tinggiLimas) {
+        Scanner input2 = new Scanner(System.in);
+        System.out.print(" Luas Alas : ");
+        luasAlas = input2.nextInt();
+        System.out.print(" Tinggi Limas : ");
+        tinggiLimas = input2.nextInt();
+        p = 33.33;
+        double volumeLimas = p * luasAlas * luasAlas * tinggiLimas;
+        System.out.println(" Volume Limas " + volumeLimas);
+    }
+
+    private static double prismaSegitiga(int alasSegitiga, int tinggiSegitiga, int tinggiPrisma) {
+        Scanner input3 = new Scanner(System.in);
+        System.out.print(" Alas Segitiga : ");
+        alasSegitiga = input3.nextInt();
+        System.out.print(" Tinggi Segitiga : ");
+        tinggiSegitiga = input3.nextInt();
+        System.out.print(" Tinggi Prisma : ");
+        tinggiPrisma = input3.nextInt();
+        double p = 0.5;
+        double volumePrisma = p * alasSegitiga * tinggiSegitiga * tinggiPrisma;
+        return volumePrisma;
+    }
+}

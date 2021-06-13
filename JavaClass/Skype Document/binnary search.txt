@@ -1,0 +1,42 @@
+public static void Process() {
+
+        int[] data = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8};
+        int indeks = runBinarySearchIteratively(data, 2, 0, 8);
+        System.out.println("dengan cara looping, ditemukan pada indeks ke-" + indeks);
+
+        System.out.println("");
+        indeks = runBinarySearchRecursively(data, 7, 0, 8);
+        System.out.println("dengan cara rekursive, ditemukan pada indeks ke-" + indeks);
+    }
+
+    public static int runBinarySearchIteratively(int[] sortedArray, int key, int low, int high) {
+        int index = 0;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (sortedArray[mid] < key) {
+                low = mid + 1;
+            } else if (sortedArray[mid] > key) {
+                high = mid - 1;
+            } else if (sortedArray[mid] == key) {
+                index = mid;
+                break;
+            }
+        }
+        return index;
+    }
+
+    //data = 0 1 2 3 4 5 6 7 8
+    //key = 2
+    //kecil = 0
+    //besar = 8
+    public static int runBinarySearchRecursively(int[] data, int key, int kecil, int besar) {
+        int tengah = (kecil + besar) / 2; // 4
+
+        if (key == data[tengah]) { //4
+            return tengah;
+        } else if (key < data[tengah]) { //0 1 2 3 
+            return runBinarySearchRecursively(data, key, kecil, tengah - 1);
+        } else { //5 6 7 8
+            return runBinarySearchRecursively(data, key, tengah + 1, besar);
+        }
+    }
